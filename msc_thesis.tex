@@ -1,4 +1,4 @@
-\batchmode
+\nonstopmode
 % Preamble
   %% Note: you can also specify any of the following options:
   %%  logo: put a University of Edinburgh logo onto the title page
@@ -24,16 +24,47 @@
   % \documentclass[phd,ilcc,twoside]{infthesis}
   %% Taught MSc -- specify a particular degree instead. If none is specified,
   %% "MSc in Informatics" is used.
-  \documentclass[msc, logo, parskip]{infthesis}  % TODO: Remove draft
+  \documentclass[msc, logo, parskip, abbrevs, notimes, twoside]{infthesis}  % (optional) twoside, draft, leftchapter, doublespacing
 
   %% Packages used
-  \usepackage[xetex, colorlinks, linkcolor=dodgerblue, citecolor=darkgreen, urlcolor=dodgerblue, hypertexnames=false]{hyperref}
+  \usepackage[svgnames]{xcolor}
+  \usepackage[xetex, colorlinks, linkcolor=MediumBlue, citecolor=DarkGreen, urlcolor=MediumBlue, hypertexnames=false]{hyperref}
   \usepackage[hypcap]{caption} % correctly hyperlink captions
-  \usepackage{xcolor}
+  \usepackage{subcaption}
+  \usepackage{fontspec}
   \usepackage{subcaption}
   \usepackage{multirow}
   \usepackage{adjustbox}
+  \usepackage{booktabs}
   \usepackage{float}
+  \usepackage{pdfpages}
+  \usepackage{fancybox}
+  \usepackage{minted}
+  \usepackage{amsmath}
+  \usepackage{multirow}
+  \usepackage{wasysym}
+  \usepackage[titletoc, header]{appendix}
+  \usepackage{array}
+  \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+  \setmainfont[Mapping=TeX-text,Ligatures=TeX]{CMU Serif}
+  \setsansfont[Mapping=TeX-text,Ligatures=TeX]{CMU Sans Serif}
+  % \setmainfont[Mapping=TeX-text,Ligatures=TeX]{Linux Libertine O}
+  % \setsansfont[Mapping=TeX-text,Ligatures=TeX]{Linux Biolinum O}
+  % \setmainfont[Mapping=TeX-text,Ligatures=TeX]{Baskerville}
+
+  \newcommand{\repeatcaption}[2]{%
+    \renewcommand{\thefigure}{\ref{#1}}%
+    \captionsetup{list=no}%
+    \caption{#2 (repeated from page \pageref{#1})}%
+  }
+
+  \newenvironment{shortitemize}
+  { \begin{itemize}
+    \setlength{\itemsep}{2pt}
+    \setlength{\parskip}{3pt}
+    \setlength{\parsep}{0pt}
+  }
+  { \end{itemize}  }
 
 %% Information about the title, etc.
 \title{Design \& Implementation of a Password Strength Meter for Partial Passwords}
@@ -48,9 +79,6 @@
 }
 
 \begin{document}
-
-\definecolor{dodgerblue}{rgb}{0.12, 0.56, 1.0}
-\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
 %% Preliminary pages
 \begin{preliminary}
 
@@ -80,16 +108,18 @@
 \include{Chapters/1-intro}
 \include{Chapters/2-background}
 \include{Chapters/3-design_implementation}
-\include{Chapters/4-evaluation}
-\include{Chapters/5-future_work}
+\include{Chapters/4-results}
+\include{Chapters/5-conclusion}
 
 %% Appendices
-% \appendix
-% \include{appendix1}
+\begin{appendices}
+\include{Appendix/Surveys}
+\include{Appendix/Website}
+\end{appendices}
 
 %% Choose your favourite bibliography style here.
-\nocite{*}  % Include uncited bibliography
-\bibliographystyle{unsrt}
+% \nocite{*}  % Include uncited bibliography
+\bibliographystyle{ieeetr}
 
 %% If you want the bibliography single-spaced (which is allowed), uncomment the next line.
 % \singlespace

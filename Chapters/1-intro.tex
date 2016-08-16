@@ -1,26 +1,32 @@
-% !TEX root = ../thesis.tex
+% !TEX root = ../msc_thesis.tex
 
 \chapter{Introduction}
+  \label{cha:intro}
+  This dissertation presents a password strength meter that evaluates passwords' strength against online attacks on partial challenges. We discuss the design choices made behind the implementation and explore its effects on the strength of the selected passwords as well as their memorability.
 
-This dissertation presents a .
+  \section{Motivation}
+    \label{sec:motivation}
+    The ubiquity of passwords, as the primary method for user authentication on the internet is undeniable, despite harsh criticism regarding their usability and security~\cite{replace_pass}. For applications where security is of paramount importance (such as banking services), multiple methods of authentication are commonly used.
 
-\section{Motivation}
-  % What are the key components of my approach and results? Also include any specific limitations
+    \emph{Partial Password} challenges, where users are asked to enter a subset of characters from their selected \emph{memorable information} is such a secondary authentication scheme, commonly used by financial institutions in the UK and, to a lesser degree, in Europe~\cite{2fa_uk}. The topics of cracking user passwords and using password-methods have been thoroughly researched in the past~\cite{pass_strength_empirical,pass_strength}, but the research was focused on traditional passwords.
 
-\section{Thesis contribution}
-  The main contributions of this work are the following:
-  \begin{enumerate}
-    \item Design and implementation of
-    \item Design and implementation of
-    \item Design and implementation of
-    \item Comparison with
-  \end{enumerate}
+    Despite their use in security-critical applications, there is little literature concerning attacks on partial passwords and metrics to evaluate their strength. To our knowledge, there does not exist any implementation of a password strength meter for partial passwords; the attempt to design and build the first of its kind is presented within this dissertation.
 
-\section{Chapter outline}
-  In chapter \ref{cha:background}, we present .
+  \section{Thesis contribution}
+    \label{sec:contribution}
+    The main contributions of this work are the following:
+    \begin{enumerate}
+      \item Survey of the extent of partial passwords' use as an authentication method.
+      \item Design and implementation of a novel password strength meter for partial passwords.
+      \item Evaluation of the partial password strength meter's effect on the strength and memorability of the selected passwords.
+    \end{enumerate}
 
-  In chapter \ref{cha:design_implementation}, we discuss .
+  \section{Chapter outline}
+    \label{sec:outline}
+    In chapter \ref{cha:background}, we present the theoretical background which is considered important for a reader of this work, in order to comprehend the concepts and designs discussed later. Specifically, we present basic concepts about passwords, partial passwords and attacks against them, briefly explain the ideas behind traditional password strength meters and summarise the results of personal research on how extensively strength meters and partial passwords are used in authentication systems.
 
-  In chapter \ref{cha:evaluation}, we compare .
+    In chapter \ref{cha:design_implementation}, we discuss the attacks on partial passwords in more depth, which guide the reasoning behind the design choices made for the partial password strength metrics and the visual presentation of the strength meter. In the second part of the chapter, we present details of the implementation, as well as the website created to test and showcase it.
 
-  In chapter \ref{cha:future-work}, we list .
+    In chapter \ref{cha:evaluation}, we describe the methodology used to evaluate the effect of the partial password strength meter in the strength of the selected passwords as well as their memorability. We discuss the results of the surveys and draw conclusions regarding our implementation.
+
+    In chapter \ref{cha:conclusion}, we mention the known limitations of this work, planned improvements to the implementation, and list some research questions that were raised during the course of the dissertation, some of which the scientific community may deem interesting and wish to explore further.

@@ -1,0 +1,39 @@
+% !TEX root = ../msc_thesis.tex
+
+\chapter{Conclusion}
+\label{cha:conclusion}
+
+  \section{Project Evaluation}
+    \label{sec:evaluation}
+
+  \section{Limitations}
+    \label{sec:limitations}
+    self-selection bias from HIT description, MTurk workers not familiar with ppass, run on UK demographic, meter effect during pass creation (not only final result), also measure time spent selecting password, edit distance etc. Dictionary needs to be constantly updated.
+
+  \section{Ethical considerations}
+    \label{sec:ethical}
+    Everyone has rockyou,phpbb, top 10M so no problem! we did not use the linkedin as it was recent and we did not want to attract further attention to it.
+
+  \section{Future work}
+    \label{sec:future_work}
+
+    \subsection{Possible improvements on strength meter}
+      \label{ssec:meter_improvements}
+      Experimental studies to find a better set of rules.
+
+    \subsection{Partial password attack improvements}
+      \label{ssec:attack_improvements}
+      Continue work on the paper by D. Aspinall and M. Just~\cite{part_pass}.
+
+      Take into account password policies when generating dictionary.
+
+      \begin{itemize}
+        \item Case where N=62, n>X. (maximum letter position asked is useful metadata!)
+        \item Using letters outside of challenge to make better guesses (e.g. knowing \#1=`1', \#2=`2' and \#5=`5', I can make a good guess for 3,4,6 even at w0.)
+      \end{itemize}
+
+    \subsection{Secure partial passwords storage}
+      \label{ssec:secure_store}
+      Common passwords: salted hash (bcrypt). Because of their unique characteristic in the form partial challenges, they are in cleartext - or posibly encrypting all 3-letter challenges - trivially brute forceable. This is VERY bad in case of db leak.
+
+      Reversible encryption as a solution?
