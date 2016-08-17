@@ -6,7 +6,7 @@ msc-thesis
 
 ## About ##
 
-This is the diploma thesis that I submitted on August 19th, 2016
+This is the thesis I submitted on August 19th, 2016
 to fulfil the requirements for the MSc in Computer Science degree in the
 [School of Informatics](http://www.ed.ac.uk/informatics/) of the University of Edinburgh.
 

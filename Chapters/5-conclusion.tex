@@ -3,6 +3,14 @@
 \chapter{Conclusion}
 \label{cha:conclusion}
 
+  \section{Summary}
+    In this dissertation, we presented the first password strength meter for partial passwords and examined its effect on various security and usability parameters. Preparing for the project, we conducted a survey to gather information about the extent of partial password deployment in the UK and the US and studied existing password strength meter implementations. We assessed the design decisions and their effects, as they were analysed by academic researchers in the past, and drew inspiration for our own design. The main part of the project required devising an accurate partial password strength metric based on the most sophisticated attacks available; the projection dictionary attack found in the work of D. Aspinall and M. Just~\cite{part_pass} was used for this purpose.
+
+    We implemented the partial password strength meter in JavaScript and in Python, and generated a projection dictionary containing the 1000 best guesses for each possible partial challenge from the RockYou dataset. Validating the correctness of the strength verdicts produced by the scoring algorithm by evaluating known leaked password databases marked the beginning of the second part of the project. A particularly interesting research question was whether this meter would have a significant effect on the created passwords' strength and memorability. In order to test the hypotheses, a website emulating a bank registration process was developed from scratch using the Python-Flask framework and surveys with questions pertaining to the examined topics were designed.
+
+    The two-part study involved a registration-login-survey process as the first stage, with a returning login and second survey taking place three days after each subjects' registration date. This study was conducted with 200 participants recruited through the Amazon MTurk crowdsourcing service, equally divided between the \emph{experiment} (were shown a meter during registration) and \emph{control} (no meter displayed) conditions. Statistical analysis of the results indicated that the strength meter we developed had a significant impact on the strength of the selected passwords, while also being received positively by the subjects from a usability perspective.
+
+
   \section{Project Evaluation}
     \label{sec:evaluation}
 
