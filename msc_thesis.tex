@@ -75,7 +75,11 @@
 
 %% Abstract.
 \abstract{
-  Abstract goes here.
+  \emph{Partial passwords} are queries of a subset of character positions from a full password; this authentication scheme is prevalent amongst financial institutions in the UK and is used in both online and telephone banking. Despite being a critical part of financial security, there is insufficient academic research about this mechanism and no known attempts to define accurate metrics for measuring partial password strength.
+
+  In this dissertation, we take a practical approach towards the partial password strength metric. We examine the best available online attack against partial passwords, the \emph{projection dictionary} attack devised by D. Aspinall and M. Just, and use it to define a partial password's strength as the inverse of the likelihood an adversary can successfully guess a partial challenge.
+
+  To the best of our knowledge, no implementation of a password strength meter for partial password exists. We therefore discuss the design choices made and the implementation process followed in creating the first of its kind. In order to evaluate its effectiveness in guiding users towards selecting stronger and more memorable passwords, we conducted an online study. Judging from the obtained results, the display of the developed partial password strength meter is proven to be effective in increasing the security of the chosen partial passwords.
 }
 
 \begin{document}
