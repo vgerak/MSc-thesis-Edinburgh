@@ -25,4 +25,4 @@ Provided you have installed XeLaTeX, the infthesis class as well as the `latexmk
 
 latexmk
 
-in the corresponding folder and a `thesis.pdf` file will be created.
+in the corresponding folder and a `msc_thesis.pdf` file will be created.
